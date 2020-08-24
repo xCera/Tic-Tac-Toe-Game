@@ -1,0 +1,130 @@
+
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(14, 14, 14);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container{
+    @include flexCenter();
+    width: 50%;
+    margin: 0 auto;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.playspace{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    transition: 0.5s;
+    opacity: 0;
+    div{
+        height: 150px;
+        width: 150px;
+        font-size: 80px;
+        color:white;
+        @include flexCenter();
+    }
+
+    div:hover{
+        background-color: rgba(83, 83, 83, 0.1);
+        transition: 0.5s;
+    }
+
+    #field2, #field5, #field8  {
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+    }
+    #field4, #field5, #field6{
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+}
+
+.modal{
+    position: fixed;
+    height: 500px;
+    width: 500px;
+    z-index: -1;
+    opacity: 0;
+    background-color: white;
+    border-radius: 40px;
+    @include flexCenter();
+    flex-direction: column;
+    transition: 0.5s;
+    h1{
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+
+    h2{
+        margin: 10px 0px 40px 0px;
+        font-size: 30px;
+        
+    }
+
+    button{
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-size: 20px;
+        border: rgb(14, 14, 14) 2px solid;
+        background-color: rgba($color: #000000, $alpha: 0);
+        
+        &:hover{
+            background-color: rgba($color: #922564, $alpha: 0.2);
+            transition: 0.3s;
+        }
+    }
+}
+
+.modal2{
+    position: fixed;
+    height: 500px;
+    width: 500px;
+    z-index: 20;
+    opacity: 1;
+    background-color: white;
+    border-radius: 40px;
+    @include flexCenter();
+    flex-direction: column;
+    transition: 0.5s;
+
+    h2{
+        margin: 10px 0px 40px 0px;
+        font-size: 50px;
+        
+    }
+
+    button{
+        padding: 15px 30px;
+        margin: 0 15px;
+        border-radius: 15px;
+        font-size: 20px;
+        border: rgb(14, 14, 14) 2px solid;
+        background-color: rgba($color: #000000, $alpha: 0);
+        
+        &:hover{
+            background-color: rgba($color: #922564, $alpha: 0.2);
+            transition: 0.3s;
+        }
+    }
+}
+
+
+
+
